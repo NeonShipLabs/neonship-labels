@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>A QR Code Generator. No extra BS.</h1>
+        <h1>A Simple QR Code Generator. No extra BS.</h1>
         <p>Download and use this QR code freely, forever.</p>
 
         <div className="inputs">
