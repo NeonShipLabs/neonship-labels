@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>QR Code Generator. No BS.</h1>
-        <p>Download and use your QR code for free, forever.</p>
+        <h1>A QR Code Generator. No extra BS.</h1>
+        <p>Download and use this QR code freely, forever.</p>
 
         <div className="inputs">
           <input
@@ -43,7 +43,6 @@ function App() {
               "Level Q - 25% of data can be restored.\n" +
               "Level H - 30% of data can be restored.\n"
             }
-            className="pricing-plan"
             options={["L", "M", "Q", "H"]}
             value={recovery}
             onChange={(e) => setRecovery(e.target.value)}
