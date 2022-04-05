@@ -1,23 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useRef, useState } from "react";
+import QRCode from "qrcode";
+import RadioTabGroup from "./RadioTabGroup";
 
 function App() {
+  const [content, setContent] = useState("");
+  const [recovery, setRecovery] = useState("L");
+  const qrEl = useRef(null);
+
+  if (qrEl.current) {
+    QRCode.toCanvas(
+      qrEl.current,
+      content,
+      { errorCorrectionLevel: recovery },
+      function (error) {
+        if (error) console.error(error);
+        console.log("success!");
+      }
+    );
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>QR Code Generator. No BS.</h1>
+        <p>Download and use your QR code for free, forever.</p>
+
+        <div className="inputs">
+          <input
+            type="text"
+            placeholder="https://qrnobs.com"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+          <RadioTabGroup
+            title={
+              "Error Correction Level.\n\n" +
+              "Level L - 7% of data can be restored.\n" +
+              "Level M - 15% of data can be restored.\n" +
+              "Level Q - 25% of data can be restored.\n" +
+              "Level H - 30% of data can be restored.\n"
+            }
+            className="pricing-plan"
+            options={["L", "M", "Q", "H"]}
+            value={recovery}
+            onChange={(e) => setRecovery(e.target.value)}
+          />
+        </div>
+
+        <canvas ref={qrEl} />
       </header>
+      <footer>
+        Made with ♥ by <a href="https://kubesail.com">KubeSail</a>
+      </footer>
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.RadioTabGroup {
+  display: flex;
+  padding: 5px;
+  background-color: var(--background);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.RadioTabGroup input {
+  display: none;
+}
+
+.RadioTabGroup .option {
+  padding: 0 12px;
+  height: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--borderRadius);
+}
+.RadioTabGroup .option:not(:last-of-type) {
+  margin-right: 3px;
+}
+.RadioTabGroup .option.checked {
+  background: white;
+  border-radius: 4px;
+}
