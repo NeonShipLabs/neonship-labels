@@ -29,6 +29,8 @@ function App() {
         <div className="inputs">
           <input
             type="text"
+            autocorrect="off"
+            autocapitalize="none"
             placeholder="https://qrnobs.com"
             value={content}
             onChange={(e) => setContent(e.target.value)}
