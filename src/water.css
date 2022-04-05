@@ -47,11 +47,11 @@ body {
   background: #fff;
   background: var(--background-body);
   text-rendering: optimizeLegibility;
-  min-height: 100vh;
+  height: -webkit-fill-available;
 }
 
 #root {
-  min-height: 100vh;
+  height: -webkit-fill-available;
 }
 
 button {
