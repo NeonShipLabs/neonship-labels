@@ -1,6 +1,7 @@
 import "./App.css";
 import { useRef, useState } from "react";
 import QRCode from "qrcode";
+import QrCreator from "qr-creator";
 import RadioTabGroup from "./RadioTabGroup";
 
 function App() {
@@ -9,14 +10,16 @@ function App() {
   const qrEl = useRef(null);
 
   if (qrEl.current) {
-    QRCode.toCanvas(
-      qrEl.current,
-      content,
-      { errorCorrectionLevel: recovery },
-      function (error) {
-        if (error) console.error(error);
-        console.log("success!");
-      }
+    QrCreator.render(
+      {
+        text: content,
+        radius: 0.425, // 0.0 to 0.5
+        ecLevel: recovery, // L, M, Q, H
+        fill: "#000000", // foreground color
+        background: null, // color or null for transparent
+        size: 256, // in pixels
+      },
+      qrEl.current
     );
   }
 
