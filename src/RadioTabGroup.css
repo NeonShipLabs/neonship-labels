@@ -5,7 +5,7 @@
   border-radius: 6px;
   display: flex;
   align-items: center;
-  user-select: none;
+  /* user-select: none; */
 }
 
 .RadioTabGroup input {

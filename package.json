@@ -6,10 +6,14 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "json-stringify-pretty-compact": "^4.0.0",
+    "konva": "^9.2.0",
     "qr-creator": "^1.0.0",
-    "qrcode": "^1.5.0",
+    "qrcode": "^1.5.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-json-editor-ajrm": "^2.5.14",
+    "react-konva": "^18.2.10",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.0"
   },
@@ -37,5 +41,13 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://qrnobs.com"
+  "homepage": "https://qrnobs.com",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120,
+    "arrowParens": "avoid",
+    "trailingComma": "es5",
+    "tabWidth": 2
+  }
 }
